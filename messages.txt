@@ -1,0 +1,36 @@
+name: Nicolai Calin
+message: Совсем неплохо
+
+name: Nicolai Calin2
+message: Совсем неплохо2
+
+name: Nicolai Calin
+age: 21
+email: kalinnikolay02@gmail.com
+message: Совсем даже неплохо
+
+name: Nicolai Calin
+age: 22
+email: kalinnikolay02@gmail.com
+message: Вот сейчас плохо
+
+name: 21
+age: 32
+email: sobaka@mail.ru
+message: Nah
+
+name: 21
+age: 32
+email: sobaka@mail.ru
+message: Nah
+
+name: 21
+age: 32
+email: sobaka@mail.ru
+message: Nah
+
+name: 21
+age: 32
+email: sobaka@mail.ru
+message: Nah
+
