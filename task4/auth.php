@@ -21,7 +21,7 @@ $validator->addValidation('login', function ($value) {
         }
     }
     return false; // Логин уникальный
-}, 'Такого пользователя не существует');
+}, 'Неверный логин или пароль');
 
 $validator->addValidation('password', function ($value) use ($data) {
     $users = file("users.txt", FILE_IGNORE_NEW_LINES);
@@ -32,19 +32,21 @@ $validator->addValidation('password', function ($value) use ($data) {
         }
     }
     return false; // Пароль неверный
-}, 'Неверный пароль');
-
-
+}, 'Неверный логин или пароль');
 
 
 $errors = $validator->validateForm($data);
 
-if (!empty($errors)) {
-    foreach ($errors as $field => $fieldErrors) {
-        foreach ($fieldErrors as $error) {
-            echo "$field: $error<br>";
-        }
+$firstError = null;
+foreach ($errors as $field => $fieldErrors) {
+    foreach ($fieldErrors as $error) {
+        $firstError = $error;
+        break 2; // Выход из обоих циклов
     }
+}
+
+if ($firstError !== null) {
+    echo $firstError;
 } else {
     echo "Пользователь авторизован";
 }
